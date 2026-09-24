@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VideoJuegos</title>
+</head>
+<body>
+    <center>
+        <h1>Menu Principal</h1>
+        <br>
+        <h2><a href="Sonic.html">Sonic</a></h2>
+        <h2><a href="Mario.html">Mario</a></h2>
+        <h2><a href="Pac-Man.html">Pac-Man</a></h2>
+        <h2><a href="Minecraft.html">Minecraft</a></h2>
+        <h2><a href="FNAF.html">Five Nights at Freddy's</a></h2>
+        <h2><a href="GearsOfWar.html">Gears Of War</a></h2>
+        <h2><a href="Halo.html">Halo</a></h2>
+        <h2><a href="ResidentEvil.html">Resident Evil</a></h2>
+        <h2><a href="GodOfWar.html">God Of War</a></h2>
+        <h2><a href="TombRaider.html">Tomb Raider</a></h2>
+    </center>
+    <hr>
+    <center>
+        <h2>Encuesta sobre la Colección de Videojuegos</h2>
+    </center>
+
+    <form action="/guardar-encuesta" method="POST" enctype="multipart/form-data">
+        
+        <fieldset>
+            <legend>Datos del Jugador</legend>
+            <div>
+                <label for="nombre">Nombre o Gamertag:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Escribe tu usuario" required>
+            </div>
+            <br>
+            <div>
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" placeholder="usuario@correo.com">
+            </div>
+            <br>
+            <div>
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" name="edad" min="10" max="99" value="18">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Preferencias de la Lista Principal</legend>
+            
+            <div>
+                <label for="juego_favorito">Selecciona tu favorito:</label>
+                <select name="juego_favorito" id="juego_favorito">
+                    <optgroup label="Clásicos y Plataformas">
+                        <option value="sonic">Sonic</option>
+                        <option value="mario">Mario</option>
+                        <option value="pacman">Pac-Man</option>
+                    </optgroup>
+                    <optgroup label="Mundo Abierto y Aventura">
+                        <option value="minecraft">Minecraft</option>
+                        <option value="god_of_war">God Of War</option>
+                        <option value="tomb_raider">Tomb Raider</option>
+                    </optgroup>
+                    <optgroup label="Acción y Terror">
+                        <option value="fnaf">Five Nights at Freddy's</option>
+                        <option value="gears">Gears Of War</option>
+                        <option value="halo">Halo</option>
+                        <option value="resident_evil">Resident Evil</option>
+                    </optgroup>
+                </select>
+            </div>
+            <br>
+
+            <div>
+                <label for="segundo_juego">Segundo favorito:</label>
+                <input type="text" list="lista_juegos" id="segundo_juego" name="segundo_juego" placeholder="Escribe o selecciona">
+                <datalist id="lista_juegos">
+                    <option value="Sonic">
+                    <option value="Mario">
+                    <option value="Pac-Man">
+                    <option value="Minecraft">
+                    <option value="Five Nights at Freddy's">
+                    <option value="Gears Of War">
+                    <option value="Halo">
+                    <option value="Resident Evil">
+                    <option value="God Of War">
+                    <option value="Tomb Raider">
+                </datalist>
+            </div>
+            <br>
+
+            <div>
+                <label>Plataforma principal:</label>
+                <input type="radio" id="pc" name="plataforma" value="pc"> 
+                <label for="pc">PC</label>
+                <input type="radio" id="xbox" name="plataforma" value="xbox"> 
+                <label for="xbox">Xbox</label>
+                <input type="radio" id="playstation" name="plataforma" value="playstation"> 
+                <label for="playstation">PlayStation</label>
+            </div>
+            <br>
+
+            <div>
+                <label>¿Cuáles has terminado?:</label><br>
+                <input type="checkbox" id="chk_halo" name="terminados" value="halo"> 
+                <label for="chk_halo">Halo</label>
+                <input type="checkbox" id="chk_mario" name="terminados" value="mario"> 
+                <label for="chk_mario">Mario</label>
+                <input type="checkbox" id="chk_minecraft" name="terminados" value="minecraft"> 
+                <label for="chk_minecraft">Minecraft</label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Detalles Adicionales</legend>
+            
+            <div>
+                <label for="calificacion">Califica la selección de juegos:</label>
+                <input type="range" id="calificacion" name="calificacion" min="1" max="10" step="1" value="8" oninput="document.getElementById('out_cal').value = this.value">
+                <output id="out_cal">8</output>/10
+            </div>
+            <br>
+
+            <div>
+                <label for="fecha_juego">¿Cuándo fue tu última partida?:</label>
+                <input type="date" id="fecha_juego" name="fecha_juego">
+            </div>
+            <br>
+
+            <div>
+                <label for="color_interfaz">Elige un color para tu perfil:</label>
+                <input type="color" id="color_interfaz" name="color_interfaz" value="#3366cc">
+            </div>
+            <br>
+
+            <div>
+                <label for="comentarios">Reseña o comentarios:</label><br>
+                <textarea id="comentarios" name="comentarios" rows="4" cols="60" placeholder="¿Qué opinas de las historias o la jugabilidad?"></textarea>
+            </div>
+            <br>
+
+            <div>
+                <label for="captura">Sube una captura de pantalla:</label>
+                <input type="file" id="captura" name="captura" accept="image/png, image/jpeg">
+            </div>
+        </fieldset>
+
+        <input type="hidden" name="origen_formulario" value="menu_principal_juegos">
+        
+        <center>
+            <input type="reset" value="Limpiar Formulario">
+            <input type="submit" value="Enviar Datos">
+        </center>
+    </form>
+</body>
+</html>
